@@ -1,0 +1,1 @@
+protoc --js_out=import_style=commonjs,binary:./js/ --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js/ --go_out=./go/ --go-grpc_out=./go/ service.proto
