@@ -1,0 +1,27 @@
+syntax = "proto3";
+package servicepb;
+option go_package="./;servicepb";
+
+service Orders{
+    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {};
+}
+
+message Order {
+    message Item {
+        string name = 1;
+        int64 price = 2;
+        int64 quantity = 3;
+    }
+    string id = 1;
+    string customer_id = 2;
+    Item item = 3;    
+}
+
+message GetOrderRequest {
+    string id = 1;
+}
+
+message GetOrderResponse {
+    Order order = 1;
+}
+
